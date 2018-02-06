@@ -1,0 +1,5 @@
+{
+  "name": "echo-chat",
+  "script": "laravel-echo-server",
+  "args": "start"
+}

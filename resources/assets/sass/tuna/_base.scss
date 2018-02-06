@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Original Yu Gothic", "Yu Gothic", YuGothic, Verdana, Meiryo, sans-serif;
+  font-feature-settings: "palt";
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  color: $color-font;
+}
+
+.container {
+  min-height: 100vh;
+  position: relative;
+}
+
+.tuna {
+  overflow: hidden;
+  &-body {
+    &-enter-active {
+      transition: 0.3s linear 1s;
+    }
+    &-enter {
+      opacity: 0;
+    }
+  }
+  &-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -18px 0 0 -18px;
+    color: $color-main;
+    font-size: 36px;
+    pointer-events: none;
+    transform: translate3d(calc((-50vh - 100px) * 0.6), calc(50vh + 100px), 0);
+    &.is-fetching {
+      transform: translate3d(calc((-30vh) * 0.6), 30vh, 0);
+      transition: 3s $easeOutSine;
+    }
+    &.is-fetched {
+      transform: translate3d(
+        calc((50vh + 100px) * 0.6),
+        calc(-50vh - 100px),
+        0
+      );
+      transition: 1.2s $easeInQuart;
+    }
+  }
+  &-oops {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 36px;
+    letter-spacing: 0.1em;
+    text-align: justify;
+    background-color: rgba($color-white, 0.9);
+    transform: translate3d(0, 100%, 0);
+    transition: 1.2s $easeOutExpo;
+    pointer-events: none;
+    &.is-active {
+      transform: translate3d(0, -60px, 0);
+      @include min {
+        padding: 30px;
+        transform: translate3d(0, -80px, 0);
+      }
+    }
+  }
+}

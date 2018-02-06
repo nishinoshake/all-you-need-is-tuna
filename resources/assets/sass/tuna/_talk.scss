@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+.talk {
+  min-height: 100vh;
+  position: relative;
+  padding: 10px 0 90px;
+  @include transition;
+  @include min {
+    padding: 20px 0 110px;
+  }
+  &-empty {
+    position: absolute;
+    top: 48%;
+    left: 0;
+    width: 100%;
+    padding: 0 30px;
+    font-size: 36px;
+    letter-spacing: 0.08em;
+    text-align: center;
+    color: $color-gray;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: 0.6s $easeOutCubic;
+    @include font-raleway;
+    &.is-hidden {
+      opacity: 0;
+      filter: blur(4px);
+    }
+  }
+  &-item {
+    display: flex;
+    padding: 10px 20px;
+    @include transition;
+    @include min {
+      padding: 10px 30px;
+    }
+  }
+  &-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    font-size: 16px;
+    color: $color-white;
+    background: $color-main;
+    border-radius: 50%;
+    @include shadow;
+  }
+  &-body {
+    flex: 1;
+  }
+  &-name {
+    margin-bottom: 6px;
+    padding-top: 5px;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    color: $color-font-light;
+  }
+  &-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: justify;
+    word-break: break-all;
+    > span {
+      display: block;
+    }
+  }
+  &-image {
+    img {
+      width: 125px;
+      height: 88px;
+    }
+  }
+}
