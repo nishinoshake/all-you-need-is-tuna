@@ -33,8 +33,8 @@ class MessageBuilder
     ];
 
     // 各画像のパス
-    private static $imageTuna = 'https://storage.noplan.cc/demo/tuna/alive.png';
-    private static $imageSushi = 'https://storage.noplan.cc/demo/tuna/sushi.png';
+    private static $imageTuna = 'https://s3-ap-northeast-1.amazonaws.com/noplan1989-demo/tuna/alive.png';
+    private static $imageSushi = 'https://s3-ap-northeast-1.amazonaws.com/noplan1989-demo/tuna/sushi.png';
 
     /**
      * ユーザーのメッセージを作るぞ

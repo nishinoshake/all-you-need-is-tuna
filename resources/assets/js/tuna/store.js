@@ -6,7 +6,7 @@ const store = {
     isFetched: false,
     friendId: null,
     timeline: [],
-    inputText: ""
+    inputText: "今夜はマグロの寿司にしよう"
   },
   fetchFriendId() {
     this.setFetching();
